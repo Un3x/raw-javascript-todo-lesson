@@ -24,3 +24,7 @@ label {
     background-color: #2fc12f;
     color: white;
 }
+
+li>button {
+    float: right;
+}

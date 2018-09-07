@@ -3,6 +3,7 @@
     var submit = $('#submitTodo');
     var ul = $('#ul');
     var error = $('#error');
+    submit.click(addTodo);
 
     function resetInput() {
         input.val('');
@@ -30,11 +31,20 @@
             }
         }
 
+        function deleteTodo() {
+            li.remove();
+        }
+
         if (isInputValid()) {
             var li = $('<li class="list-group-item">' + input.val() + '</li>');
             li.click(toogleTodo);
 
+            var btn = $('<button class="btn btn-light">X</button>');
+            li.append(btn);
+            btn.click(deleteTodo);
+
             ul.append(li);
+
 
             resetInput();
             hideError();
@@ -42,6 +52,4 @@
             displayError();
         }
     }
-
-    submit.click(addTodo);
 })();
