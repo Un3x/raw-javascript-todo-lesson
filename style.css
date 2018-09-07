@@ -19,3 +19,8 @@ label {
     color: #a91515;
     display: none;
 }
+
+.done {
+    background-color: #2fc12f;
+    color: white;
+}

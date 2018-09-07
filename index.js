@@ -4,6 +4,10 @@
     var ul = $('#ul');
     var error = $('#error');
 
+    function resetInput() {
+        input.val('');
+    }
+
     function isInputValid() {
         return input.val().length > 0;
     }
@@ -17,10 +21,22 @@
     }
 
     function addTodo() {
+
+        function toogleTodo() {
+            if (!li.hasClass('done')) {
+                li.addClass('done');
+            } else {
+                li.removeClass('done');
+            }
+        }
+
         if (isInputValid()) {
             var li = $('<li class="list-group-item">' + input.val() + '</li>');
+            li.click(toogleTodo);
+
             ul.append(li);
-            input.val('');
+
+            resetInput();
             hideError();
         } else {
             displayError();
