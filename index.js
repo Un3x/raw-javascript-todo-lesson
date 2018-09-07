@@ -1,12 +1,14 @@
 (function () {
     var input = $('#userInput');
     var submit = $('#submitTodo');
+    var ul = $('#ul');
 
-    function displayInConsole() {
-        console.log(input.val());
+    function addTodo() {
+        var li = document.createElement('li');
+        var txt = document.createTextNode(input.val());
+        li.append(txt);
+        ul.append(li);
     }
 
-    console.log(submit);
-
-    submit.click(displayInConsole);
+    submit.click(addTodo);
 })();
