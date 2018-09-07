@@ -4,9 +4,7 @@
     var ul = $('#ul');
 
     function addTodo() {
-        var li = document.createElement('li');
-        var txt = document.createTextNode(input.val());
-        li.append(txt);
+        var li = $('<li class="list-group-item">' + input.val() + '</li>');
         ul.append(li);
     }
 
